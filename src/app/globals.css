@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+/* Theme variables - Old-School Agricultural Portal Palette */
+:root {
+  --background: #fbf9f4; /* Warm parchment paper */
+  --foreground: #1c261e; /* High contrast crisp dark ink */
+  
+  --card: #ffffff;
+  --card-foreground: #1c261e;
+  
+  --popover: #ffffff;
+  --popover-foreground: #1c261e;
+  
+  --primary: #15803d; /* Classic Forest/Agri Green */
+  --primary-foreground: #ffffff;
+  
+  --muted: #ede7dc; /* Soft sandy stone */
+  --muted-foreground: #635848;
+  
+  --accent: #f2eee5;
+  --accent-foreground: #1c261e;
+  
+  --border: #b8ac99; /* Retro sepia border */
+  --input: #d6ccbe;
+  --ring: #15803d;
+  
+  /* Sidebar specifically for Dashboard/Assistant */
+  --sidebar: #f5f0e6;
+  --sidebar-foreground: #1c261e;
+  --sidebar-border: #b8ac99;
+}
+
+.dark {
+  --background: #0d1a12; /* Retro terminal / dark forest */
+  --foreground: #e6f7ec; 
+  
+  --card: #13261a;
+  --card-foreground: #e6f7ec;
+  
+  --popover: #13261a;
+  --popover-foreground: #e6f7ec;
+  
+  --primary: #22c55e;
+  --primary-foreground: #000000;
+  
+  --muted: #1c3626;
+  --muted-foreground: #8db599;
+  
+  --accent: #1c3626;
+  --accent-foreground: #e6f7ec;
+  
+  --border: #294c36;
+  --input: #294c36;
+  --ring: #22c55e;
+  
+  --sidebar: #0a1710;
+  --sidebar-foreground: #e6f7ec;
+  --sidebar-border: #294c36;
+}
+
+@theme {
+  --font-sans: 'Trebuchet MS', 'Lucida Grande', Verdana, sans-serif;
+  --font-serif: Georgia, Cambria, 'Times New Roman', serif;
+  --font-mono: 'Courier New', Courier, monospace;
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+}
+
+/* Old-School Web / Retro Portal Styles */
+h1, h2, h3, h4, .font-portal {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* Retro Beveled Panel */
+.retro-bevel {
+  border: 3px solid;
+  border-color: #ffffff #5c5446 #5c5446 #ffffff;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+}
+
+.retro-bevel-inset {
+  border: 2px solid;
+  border-color: #5c5446 #ffffff #ffffff #5c5446;
+  background-color: #ffffff;
+}
+
+/* Retro Button */
+.retro-btn {
+  border: 2px solid;
+  border-color: #ffffff #4a4234 #4a4234 #ffffff;
+  background: #ede6d8;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Trebuchet MS', sans-serif;
+  box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+  transition: all 0.05s ease-in-out;
+}
+.retro-btn:active {
+  border-color: #4a4234 #ffffff #ffffff #4a4234;
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+/* Retro Window Titlebar */
+.retro-titlebar {
+  background: linear-gradient(90deg, #144d29, #1b6335);
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Retro Stamp / Badge */
+.retro-stamp {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  border: 2px dashed #144d29;
+  background: #f0f7f2;
+  color: #144d29;
+  padding: 2px 8px;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+/* Custom classic scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #ede6d8;
+  border: 1px solid #b8ac99;
+}
+::-webkit-scrollbar-thumb {
+  background: #8c7e6c;
+  border: 2px solid #ffffff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5c5143;
+}
+
+/* Smooth transitions */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Risk badge animations */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 4px currentColor; }
+  50% { box-shadow: 0 0 10px currentColor; }
+}
+
+.risk-badge-critical {
+  animation: pulse-glow 2s ease-in-out infinite;
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+/* Card hover with classic shadow */
+.card-hover {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Upload zone */
+.upload-zone {
+  border: 2px dashed #15803d;
+  background: #fbf9f4;
+  transition: all 0.2s ease;
+}
+.upload-zone:hover, .upload-zone.drag-over {
+  border-color: #144d29;
+  background: #f0fdf4;
+}
+
+/* Marquee bar animation */
+@keyframes retro-marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: retro-marquee 28s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Chart tooltip styles */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+  background-color: var(--background);
+  color: var(--foreground);
+}
